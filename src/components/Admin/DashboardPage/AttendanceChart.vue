@@ -23,13 +23,6 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 export default {
   name: "BarChart",
   components: { Bar },
-  data() {
-    return {
-      chartData: {
-        labels: ["January", "February", "March"],
-        },
-    };
-  },
   mounted() {
     axios.get("/stats/users").then((res) => {
       this.stats = [res.data.data.present, res.data.data.late, res.data.data.absent];
@@ -56,5 +49,8 @@ export default {
     }
   }
 };
+
+
+
 
 </script>
